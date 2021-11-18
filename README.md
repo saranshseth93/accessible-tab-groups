@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Accessible Tab Groups
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Making tab groups accessible with ReactJS and Redux.
+Testing it using Cypress.io
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+1. The tab groups are completely accessible using the screen reader as well as the keyboard navigation.
 
-### `yarn start`
+2. The tab selection is retained in local storage on refresh and browser navigation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. The tabs can be accessed using URL. Just type the tab label at the end of url. Example: http://localhost:3000/#Croc
+   Note: The tab label is case sensitive.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. It works across all major browsers i.e Chrome, Firefox, Edge.
 
-### `yarn test`
+5. It passes all the Cypress tests.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. More tab groups can be added easily using the react components.
 
-### `yarn build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install my-project with npm
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project was bootstrapped with Create React App.
 
-### `yarn eject`
+## Running the project
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To run this project execute
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+or
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+  yarn start
+```
 
-## Learn More
+## Building the project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run this project execute
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  npm build
+```
 
-### Code Splitting
+or
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  yarn build
+```
 
-### Analyzing the Bundle Size
+## Running Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+We are using Cypress for testing.
+To run tests, run the following command
 
-### Making a Progressive Web App
+```bash
+  npx cypress open
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This will open a new window with the list of tests. Select the appropriate test to run it.
 
-### Advanced Configuration
+To run the tests in the command line run the following command
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+  npx cypress run
+```
