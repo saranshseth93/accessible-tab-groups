@@ -15,22 +15,36 @@ class Tabs extends Component {
 
     //tab id from url
     let urlTab = window.location.hash;
-    urlTab = urlTab.replace("#", "");
-    console.log(urlTab);
 
+    //Remove the # from the tab id
+    urlTab = urlTab.replace("#", "");
+    // console.log(urlTab);
+
+    //Set the active tab according to the most relevant conditions if all empty set the first one as active
     this.state = {
       activeTab:
-        urlTab != ""
+        urlTab !== ""
           ? urlTab
           : localStorage.getItem("activeTab") !== null
           ? localStorage.getItem("activeTab")
           : this.props.children[0].props.label,
     };
+
+    //Update the active tab to reflect the changes in the selected tab panel aria settings
+    if (urlTab !== "") {
+      this.props.updateActiveTab(urlTab);
+    } else if (localStorage.getItem("activeTab") !== null) {
+      this.props.updateActiveTab(localStorage.getItem("activeTab"));
+    } else {
+      this.props.updateActiveTab(this.props.children[0].props.label);
+    }
   }
 
   onClickTabItem = (tab) => {
+    //Change the active tab on click
     this.setState({ activeTab: tab });
 
+    //Add the clicked tab to local storage to retain it on refresh
     localStorage.setItem("activeTab", tab);
   };
 
@@ -63,7 +77,6 @@ class Tabs extends Component {
             if (child.props.label !== activeTab) {
               return undefined;
             } else {
-              updateActiveTab(child.props.tabid);
               return child.props.children;
             }
           })}

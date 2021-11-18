@@ -1,3 +1,4 @@
+//Set initial variable for the redux state
 const INITIAL_STATE = {
   ariaHidden: "true",
 };

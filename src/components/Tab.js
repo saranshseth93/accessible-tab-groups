@@ -10,6 +10,8 @@ class Tab extends Component {
 
   onClick = () => {
     const { label, onClick } = this.props;
+
+    //Run the onclick method passed in from the parent component
     onClick(label);
   };
 
@@ -19,11 +21,13 @@ class Tab extends Component {
       props: { activeTab, label, tabid },
     } = this;
 
+    //Default values for tabs
     let className = "tab-list-item";
     let ariaSelected = false;
     let tabOrder = -1;
 
     if (activeTab === label) {
+      //if the tab is the selected tab then update the values
       className += " tab-list-active";
       ariaSelected = true;
       tabOrder = 0;
